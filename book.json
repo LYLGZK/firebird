@@ -30,7 +30,9 @@
         "pageNumbers": true,
         "paperSize": "a4"
     },
-    "plugins": [],
+    "plugins": [
+        "chapter-fold"
+    ],
     "pluginsConfig": {
 
     },
