@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>管道的使用 · Levy</title>
+        <title>go传参类型 · Levy</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -51,10 +51,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="参数传值和传引用.html" />
+    <link rel="next" href="../php/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="管道的使用.html" />
     
 
     </head>
@@ -216,7 +216,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1.1" data-path="管道的使用.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="管道的使用.html">
             
                 <a href="管道的使用.html">
             
@@ -229,7 +229,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="参数传值和传引用.html">
+        <li class="chapter active" data-level="1.3.1.2" data-path="参数传值和传引用.html">
             
                 <a href="参数传值和传引用.html">
             
@@ -391,7 +391,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >管道的使用</a>
+        <a href="../.." >go传参类型</a>
     </h1>
 </div>
 
@@ -406,51 +406,109 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7BA1;&#x9053;&#x7684;&#x4F7F;&#x7528;">&#x7BA1;&#x9053;&#x7684;&#x4F7F;&#x7528;</h1>
-<h2 id="&#x4E00;&#x3001;&#x7BA1;&#x9053;&#x7684;&#x7C7B;&#x578B;">&#x4E00;&#x3001;&#x7BA1;&#x9053;&#x7684;&#x7C7B;&#x578B;</h2>
-<p>&#x6839;&#x636E;&#x662F;&#x5426;&#x6709;&#x7F13;&#x51B2;&#x5C06;&#x7BA1;&#x9053;&#x5206;&#x4E3A;&#x6709;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x548C;&#x65E0;&#x7F13;&#x51B2;&#x7BA1;&#x9053;&#x3002;</p>
-<h2 id="&#x4E8C;&#x3001;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;">&#x4E8C;&#x3001;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;</h2>
+                                <h2 id="go&#x8BED;&#x8A00;&#x5728;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5230;&#x5E95;&#x662F;&#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5F15;&#x7528;&#x5462;&#xFF1F;"><font color="red">go&#x8BED;&#x8A00;&#x5728;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5230;&#x5E95;&#x662F;&#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5F15;&#x7528;&#x5462;&#xFF1F;</font></h2>
+<p>&#x200B;    &#x8FD9;&#x4E2A;&#x662F;&#x5B66;&#x4E60;&#x7F16;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x6700;&#x8BA9;&#x4EBA;&#x5934;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x4E14;&#x4E5F;&#x662F;&#x9762;&#x8BD5;&#x4E2D;&#x7ECF;&#x5E38;&#x88AB;&#x95EE;&#x8D77;&#x6765;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#x3002;&#x90A3;&#x5728;go&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5230;&#x5E95;&#x662F;&#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5F15;&#x7528;&#x3002;</p>
+<hr>
+<p>[TOC]</p>
+<h2 id="&#x4E00;&#x3001;&#x4F20;&#x503C;&#x548C;&#x4F20;&#x5F15;&#x7528;">&#x4E00;&#x3001;&#x4F20;&#x503C;&#x548C;&#x4F20;&#x5F15;&#x7528;</h2>
+<ol>
+<li>&#x5982;&#x679C;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x4E2D;&#xFF0C;&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x5C31;&#x662F;&#x4F20;&#x503C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x7528;&#x5728;&#x4E86;&#x8FD9;&#x4E2A;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x3002;</li>
+<li>&#x4F20;&#x5F15;&#x7528;&#x5C31;&#x662F;&#x5728;&#x5411;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x4E4B;&#x540E;&#xFF0C;&#x5F62;&#x53C2;&#x548C;&#x5B9E;&#x53C2;&#x7684;&#x5730;&#x5740;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x53EA;&#x53D1;&#x751F;&#x4E86;&#x524D;&#x62F7;&#x8D1D;&#xFF1B;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x53EA;&#x662F;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5730;&#x5740;&#x6307;&#x5411;&#x4E86;&#x539F;&#x6765;&#x7684;&#x503C;&#x3002;</li>
+</ol>
+<h2 id="&#x4E8C;&#x3001;&#x7B80;&#x5355;&#x7C7B;&#x578B;&#x4F20;&#x503C;&#x9A8C;&#x8BC1;">&#x4E8C;&#x3001;&#x7B80;&#x5355;&#x7C7B;&#x578B;&#x4F20;&#x503C;&#x9A8C;&#x8BC1;</h2>
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> test
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;testing&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> TestParamType(t *testing.T)  {
+    i := <span class="hljs-number">10</span>
+    ip := &amp;i
+
+    fmt.Printf(<span class="hljs-string">&quot;i&#x7684;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,ip)
+
+    fmt.Printf(<span class="hljs-string">&quot;&#x539F;&#x59CB;&#x6307;&#x9488;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;ip)
+    modify(ip)
+
+    fmt.Println(<span class="hljs-string">&quot;&#x503C;&#x662F;&#xFF1A;&quot;</span>,i)
+
+}
+
+<span class="hljs-keyword">func</span> modify(ip *<span class="hljs-keyword">int</span>)  {
+    fmt.Printf(<span class="hljs-string">&quot;&#x51FD;&#x6570;&#x91CC;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6307;&#x9488;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;ip)
+    *ip = <span class="hljs-number">12</span>
+}
+</code></pre>
+<p><img src="../../images/image-20210526200513635.png" alt="image-20210526200513635"></p>
+<p>&#x4ECE;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x5177;&#x4F53;&#x7684;&#x503C;&#x4F20;&#x9012;&#x8FD8;&#x662F;&#x6307;&#x9488;&#x7684;&#x4F20;&#x9012;&#xFF0C;&#x90FD;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x503C;&#x4F20;&#x9012;&#x3002;</p>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x4F20;&#x9012;&#x5C31;&#x80FD;&#x6539;&#x53D8;&#x539F;&#x6765;&#x7684;&#x503C;&#x5462;"><table><tr><td bgcolor="PowderBlue"><font color="red">&#x4E3A;&#x4EC0;&#x4E48;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x4F20;&#x9012;&#x5C31;&#x80FD;&#x6539;&#x53D8;&#x539F;&#x6765;&#x7684;&#x503C;&#x5462;</font></td></tr></table></h3>
 <ul>
-<li>&#x5728;&#x8BFB;&#x53D6;&#x6709;&#x7F13;&#x51B2;/&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7BA1;&#x9053;&#x4E2D;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4E86;&#xFF0C; &#x8FD8;&#x8981;&#x8BFB;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#x3002;</li>
-<li>&#x5728;&#x5199;&#x6709;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7BA1;&#x9053;&#x6EE1;&#x4E86;&#xFF0C;&#x5199;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8981;&#x963B;&#x585E;&#x3002;</li>
+<li>&#x4ECE;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x4F20;&#x9012;&#x53C2;&#x6570;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;&#x4E86;&#x4E00;&#x4EFD;&#x6307;&#x9488;&#x5730;&#x5740;&#xFF0C;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x6307;&#x5411;&#x503C;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x8FDB;&#x800C;&#x4FEE;&#x6539;&#x4E86;&#x503C;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x503C;&#x4F20;&#x9012;&#xFF0C;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x6307;&#x9488;&#x4F20;&#x9012;&#xFF0C;&#x53D1;&#x73B0;&#x4FEE;&#x6539;&#x7684;&#x503C;&#x53EA;&#x662F;&#x62F7;&#x8D1D;&#x51FA;&#x6765;&#x7684;&#x90A3;&#x4E00;&#x4EFD;&#x7684;&#x503C;&#xFF0C;&#x539F;&#x59CB;&#x6570;&#x636E;&#x5E76;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x3002;</li>
+</ul>
+<h2 id="&#x4E09;&#x3001;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x7684;&#x4F20;&#x9012;">&#x4E09;&#x3001;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x7684;&#x4F20;&#x9012;</h2>
+<h3 id="1&#x3001;&#x5728;go&#x8BED;&#x8A00;&#x4E2D;&#x590D;&#x6742;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;">1&#x3001;&#x5728;go&#x8BED;&#x8A00;&#x4E2D;&#x590D;&#x6742;&#x7684;&#x7C7B;&#x578B;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h3>
+<ul>
+<li>struct</li>
+<li>map</li>
+<li>channel</li>
+<li>splice</li>
 </ul>
 <pre><code class="lang-go"><span class="hljs-keyword">package</span> test
 
 <span class="hljs-keyword">import</span> (
     <span class="hljs-string">&quot;fmt&quot;</span>
     <span class="hljs-string">&quot;testing&quot;</span>
-    <span class="hljs-string">&quot;time&quot;</span>
 )
 
-<span class="hljs-keyword">func</span> TestChannel(t *testing.T) {
-    channel1 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>)<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6709;&#x7F13;&#x51B2;&#x7684;int&#x7684;&#x901A;&#x9053;</span>
+<span class="hljs-keyword">func</span> TestParamType(t *testing.T)  {
+    i := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>}
 
-    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>(channel <span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>) {
+    fmt.Printf(<span class="hljs-string">&quot;%T&quot;</span>,i)
+    fmt.Printf(<span class="hljs-string">&quot;&#x539F;&#x59CB;&#x6307;&#x9488;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;i)
+    modify(i)
 
-        time.Sleep(time.Second * <span class="hljs-number">5</span>)
+    fmt.Println(<span class="hljs-string">&quot;&#x503C;&#x662F;&#xFF1A;&quot;</span>,i)
 
-        channel1 &lt;- <span class="hljs-number">10</span>
-    }(channel1)
+}
 
-    res := &lt;- channel1
-
-    fmt.Println(res)
+<span class="hljs-keyword">func</span> modify(ip []<span class="hljs-keyword">int</span>)  {
+    fmt.Printf(<span class="hljs-string">&quot;&#x51FD;&#x6570;&#x91CC;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6307;&#x9488;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;ip)
+    ip[<span class="hljs-number">0</span>] = <span class="hljs-number">12</span>
 }
 </code></pre>
-<h3 id="-notice"><font color="#00ffff">  </font><font color="red">Notice</font></h3>
-<ul>
-<li>&#x7BA1;&#x9053;&#x7684;&#x5199;&#x5165;&#x548C;&#x8BFB;&#x53D6;&#x53EF;&#x4EE5;&#x5206;&#x5E03;&#x5728;&#x4E0D;&#x540C;&#x7684;gorountine&#x4E2D;</li>
-<li>&#x5728;&#x8BFB;&#x53D6;&#x963B;&#x585E;&#x671F;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5411;&#x8BE5;&#x534F;&#x7A0B;&#x5199;&#x5165;&#x4E86;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x963B;&#x585E;&#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x3002;</li>
-<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x8BFB;&#x53D6;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x963B;&#x585E;&#x4E86;&#xFF0C;&#x4E4B;&#x540E;&#x8FD9;&#x4E2A;&#x7BA1;&#x9053;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x5199;&#x5165;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E00;&#x76F4;&#x963B;&#x585E;&#xFF0C;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x5C01;&#x3002;</li>
-</ul>
-<h2 id="&#x4E09;&#x3001;&#x5173;&#x4E8E;&#x901A;&#x9053;&#x7684;panic">&#x4E09;&#x3001;&#x5173;&#x4E8E;&#x901A;&#x9053;&#x7684;panic</h2>
-<h4 id="1&#x3001;&#x5982;&#x679C;&#x5173;&#x95ED;&#x4E86;&#x7BA1;&#x9053;&#xFF0C;&#x518D;&#x5411;&#x7BA1;&#x9053;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#x4F1A;&#x5F15;&#x53D1;panic&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x548C;&#x6709;&#x65E0;&#x7F13;&#x51B2;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x3002;">1&#x3001;&#x5982;&#x679C;&#x5173;&#x95ED;&#x4E86;&#x7BA1;&#x9053;&#xFF0C;&#x518D;&#x5411;&#x7BA1;&#x9053;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#x4F1A;&#x5F15;&#x53D1;panic&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x548C;&#x6709;&#x65E0;&#x7F13;&#x51B2;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x3002;</h4>
-<h4 id="2&#x3001;&#x5982;&#x679C;&#x8981;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;channel&#xFF0C;&#x4E5F;&#x4F1A;&#x5F15;&#x8D77;panic&#xFF0C;&#x5173;&#x95ED;&#x7A7A;&#x7684;&#x4E1C;&#x897F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x7ED3;&#x679C;&#x3002;">2&#x3001;&#x5982;&#x679C;&#x8981;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;channel&#xFF0C;&#x4E5F;&#x4F1A;&#x5F15;&#x8D77;panic&#xFF0C;&#x5173;&#x95ED;&#x7A7A;&#x7684;&#x4E1C;&#x897F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x7ED3;&#x679C;&#x3002;</h4>
-<h2 id="&#x56DB;&#x3001;&#x6C38;&#x4E45;&#x963B;&#x585E;">&#x56DB;&#x3001;&#x6C38;&#x4E45;&#x963B;&#x585E;</h2>
-<h4 id="1&#x3001;-&#x5982;&#x679C;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;channel&#xFF0C;&#x6CA1;&#x6709;make&#x3002;&#x8FD9;&#x4E2A;channel&#x5C31;&#x662F;nil&#x7684;">1&#x3001; &#x5982;&#x679C;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;channel&#xFF0C;&#x6CA1;&#x6709;make&#x3002;&#x8FD9;&#x4E2A;channel&#x5C31;&#x662F;nil&#x7684;</h4>
-<h4 id=""> </h4>
-<h2 id="&#x4E94;&#x3001;&#x603B;&#x7ED3;">&#x4E94;&#x3001;&#x603B;&#x7ED3;</h2>
-<p>&#x7BA1;&#x9053;&#x7684;&#x5173;&#x95ED;&#x8981;&#x5728;&#x53D1;&#x9001;&#x8005;&#x624B;&#x91CC;&#x63A7;&#x5236;&#xFF0C;&#x8981;&#x4E0D;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x8005;&#x63A5;&#x53D7;&#x5B8C;&#x4E86;&#x5C31;&#x5173;&#x95ED;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5C31;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x4E86;&#x3002;</p>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="../../images/image-20210526201721807.png" alt="image-20210526201721807"></p>
+<p>&#x4ECE;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#xFF0C;&#x5207;&#x7247;&#x4E5F;&#x662F;&#x4F20;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x5730;&#x5740;&#x4E0D;&#x4E00;&#x6837;&#x4E86;&#x3002;</p>
+<font color="red">&#x95EE;&#x9898;&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x4E2D;&#x6539;&#x4E86;&#x5207;&#x7247;&#xFF0C;&#x539F;&#x59CB;&#x503C;&#x4E5F;&#x751F;&#x6548;&#x4E86;&#xFF1F;</font>
+
+<pre><code class="lang-go"><span class="hljs-keyword">package</span> test
+
+<span class="hljs-keyword">import</span> (
+    <span class="hljs-string">&quot;fmt&quot;</span>
+    <span class="hljs-string">&quot;testing&quot;</span>
+)
+
+<span class="hljs-keyword">func</span> TestParamType(t *testing.T)  {
+    i := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>}
+
+    fmt.Printf(<span class="hljs-string">&quot;%T&quot;</span>,i)
+    fmt.Printf(<span class="hljs-string">&quot;&#x539F;&#x59CB;&#x6307;&#x9488;&#x7684;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;i[<span class="hljs-number">0</span>])
+    modify(i)
+
+    fmt.Println(<span class="hljs-string">&quot;&#x503C;&#x662F;&#xFF1A;&quot;</span>,i)
+
+}
+
+<span class="hljs-keyword">func</span> modify(ip []<span class="hljs-keyword">int</span>)  {
+    fmt.Printf(<span class="hljs-string">&quot;&#x51FD;&#x6570;&#x91CC;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6307;&#x9488;&#x5185;&#x5B58;&#x5730;&#x5740;&#x662F;&#xFF1A;%p&quot;</span>,&amp;ip[<span class="hljs-number">0</span>])
+    ip[<span class="hljs-number">0</span>] = <span class="hljs-number">12</span>
+}
+</code></pre>
+<p><img src="../../images/image-20210526201948000.png" alt="image-20210526201948000"></p>
+<p>&#x4ECE;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#xFF0C;&#x5207;&#x7247;&#x7684;&#x9996;&#x4F4D;&#x7F6E;&#x7684;&#x5730;&#x5740;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5207;&#x7247;&#x6DF1;&#x62F7;&#x8D1D;&#x4E86;&#x4E00;&#x4E2A;&#x51FA;&#x6765;&#xFF0C;&#x4F46;&#x662F;&#x5207;&#x7247;&#x5E95;&#x5C42;&#x7684;&#x6570;&#x7EC4;&#x662F;&#x6307;&#x9488;&#x7C7B;&#x578B;&#x7684;&#x3002;</p>
 
                                 
                                 </section>
@@ -478,12 +536,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Go 的崛起">
+                <a href="管道的使用.html" class="navigation navigation-prev " aria-label="Previous page: 管道的使用">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="参数传值和传引用.html" class="navigation navigation-next " aria-label="Next page: go传参类型">
+                <a href="../php/" class="navigation navigation-next " aria-label="Next page: PHP的从一而终">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -494,7 +552,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"管道的使用","level":"1.3.1.1","depth":3,"next":{"title":"go传参类型","level":"1.3.1.2","depth":3,"path":"编程语言/go/参数传值和传引用.md","ref":"编程语言/go/参数传值和传引用.md","articles":[]},"previous":{"title":"Go 的崛起","level":"1.3.1","depth":2,"path":"编程语言/go/README.md","ref":"编程语言/go/README.md","articles":[{"title":"管道的使用","level":"1.3.1.1","depth":3,"path":"编程语言/go/管道的使用.md","ref":"编程语言/go/管道的使用.md","articles":[]},{"title":"go传参类型","level":"1.3.1.2","depth":3,"path":"编程语言/go/参数传值和传引用.md","ref":"编程语言/go/参数传值和传引用.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","livereload"],"styles":{"website":"assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Levy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Levy","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"猛禽不是鸟":"http://localhost:4000/"}},"gitbook":"*","description":"This is record sharing by Levy.","extension":null},"file":{"path":"编程语言/go/管道的使用.md","mtime":"2021-05-25T15:35:14.982Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T02:14:12.424Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"go传参类型","level":"1.3.1.2","depth":3,"next":{"title":"PHP的从一而终","level":"1.3.2","depth":2,"path":"编程语言/php/README.md","ref":"编程语言/php/README.md","articles":[]},"previous":{"title":"管道的使用","level":"1.3.1.1","depth":3,"path":"编程语言/go/管道的使用.md","ref":"编程语言/go/管道的使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","livereload"],"styles":{"website":"assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Levy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Levy","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"猛禽不是鸟":"http://localhost:4000/"}},"gitbook":"*","description":"This is record sharing by Levy.","extension":null},"file":{"path":"编程语言/go/参数传值和传引用.md","mtime":"2021-05-26T12:21:03.443Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T02:14:12.424Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

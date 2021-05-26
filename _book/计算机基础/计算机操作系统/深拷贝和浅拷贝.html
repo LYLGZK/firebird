@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>管道的使用 · Levy</title>
+        <title>深拷贝和浅拷贝 · Levy</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -51,7 +51,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="参数传值和传引用.html" />
+    <link rel="next" href="../../编程语言/" />
     
     
     <link rel="prev" href="./" />
@@ -105,9 +105,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../../计算机基础/">
+        <li class="chapter " data-level="1.2" data-path="../">
             
-                <a href="../../计算机基础/">
+                <a href="../">
             
                     
                     计算机基础
@@ -119,9 +119,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../../计算机基础/计算机网络/">
+        <li class="chapter " data-level="1.2.1" data-path="../计算机网络/">
             
-                <a href="../../计算机基础/计算机网络/">
+                <a href="../计算机网络/">
             
                     
                     计算机网络
@@ -133,9 +133,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../../计算机基础/计算机网络/网络分层.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="../计算机网络/网络分层.html">
             
-                <a href="../../计算机基础/计算机网络/网络分层.html">
+                <a href="../计算机网络/网络分层.html">
             
                     
                      网络分层 
@@ -151,9 +151,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../../计算机基础/计算机操作系统/">
+        <li class="chapter " data-level="1.2.2" data-path="./">
             
-                <a href="../../计算机基础/计算机操作系统/">
+                <a href="./">
             
                     
                      计算机操作系统 
@@ -165,9 +165,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../计算机基础/计算机操作系统/深拷贝和浅拷贝.html">
+        <li class="chapter active" data-level="1.2.2.1" data-path="深拷贝和浅拷贝.html">
             
-                <a href="../../计算机基础/计算机操作系统/深拷贝和浅拷贝.html">
+                <a href="深拷贝和浅拷贝.html">
             
                     
                     深拷贝和浅拷贝
@@ -188,9 +188,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../">
+        <li class="chapter " data-level="1.3" data-path="../../编程语言/">
             
-                <a href="../">
+                <a href="../../编程语言/">
             
                     
                     编程语言
@@ -202,9 +202,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="./">
+        <li class="chapter " data-level="1.3.1" data-path="../../编程语言/go/">
             
-                <a href="./">
+                <a href="../../编程语言/go/">
             
                     
                     Go 的崛起
@@ -216,9 +216,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1.1" data-path="管道的使用.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../../编程语言/go/管道的使用.html">
             
-                <a href="管道的使用.html">
+                <a href="../../编程语言/go/管道的使用.html">
             
                     
                     管道的使用
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="参数传值和传引用.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../../编程语言/go/参数传值和传引用.html">
             
-                <a href="参数传值和传引用.html">
+                <a href="../../编程语言/go/参数传值和传引用.html">
             
                     
                     go传参类型
@@ -247,9 +247,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../php/">
+        <li class="chapter " data-level="1.3.2" data-path="../../编程语言/php/">
             
-                <a href="../php/">
+                <a href="../../编程语言/php/">
             
                     
                     PHP的从一而终
@@ -391,7 +391,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >管道的使用</a>
+        <a href="../.." >深拷贝和浅拷贝</a>
     </h1>
 </div>
 
@@ -406,51 +406,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7BA1;&#x9053;&#x7684;&#x4F7F;&#x7528;">&#x7BA1;&#x9053;&#x7684;&#x4F7F;&#x7528;</h1>
-<h2 id="&#x4E00;&#x3001;&#x7BA1;&#x9053;&#x7684;&#x7C7B;&#x578B;">&#x4E00;&#x3001;&#x7BA1;&#x9053;&#x7684;&#x7C7B;&#x578B;</h2>
-<p>&#x6839;&#x636E;&#x662F;&#x5426;&#x6709;&#x7F13;&#x51B2;&#x5C06;&#x7BA1;&#x9053;&#x5206;&#x4E3A;&#x6709;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x548C;&#x65E0;&#x7F13;&#x51B2;&#x7BA1;&#x9053;&#x3002;</p>
-<h2 id="&#x4E8C;&#x3001;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;">&#x4E8C;&#x3001;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#x548C;&#x5199;&#x5165;</h2>
+                                <p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;&#x5B8C;&#x5168;&#x662F;&#x62F7;&#x8D1D;&#x4E00;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x539F;&#x6709;&#x6570;&#x636E;&#x7684;&#x4FEE;&#x6539;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x62F7;&#x8D1D;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x6D45;&#x62F7;&#x8D1D;&#x5C31;&#x662F;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x6307;&#x5411;&#x4E86;&#x6808;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x503C;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
 <ul>
-<li>&#x5728;&#x8BFB;&#x53D6;&#x6709;&#x7F13;&#x51B2;/&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7BA1;&#x9053;&#x4E2D;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4E86;&#xFF0C; &#x8FD8;&#x8981;&#x8BFB;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x963B;&#x585E;&#x3002;</li>
-<li>&#x5728;&#x5199;&#x6709;&#x7F13;&#x51B2;&#x7684;&#x7BA1;&#x9053;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7BA1;&#x9053;&#x6EE1;&#x4E86;&#xFF0C;&#x5199;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8981;&#x963B;&#x585E;&#x3002;</li>
+<li><a href="https://www.cnblogs.com/williamjie/p/11192895.html" target="_blank">https://www.cnblogs.com/williamjie/p/11192895.html</a></li>
+<li></li>
 </ul>
-<pre><code class="lang-go"><span class="hljs-keyword">package</span> test
-
-<span class="hljs-keyword">import</span> (
-    <span class="hljs-string">&quot;fmt&quot;</span>
-    <span class="hljs-string">&quot;testing&quot;</span>
-    <span class="hljs-string">&quot;time&quot;</span>
-)
-
-<span class="hljs-keyword">func</span> TestChannel(t *testing.T) {
-    channel1 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>)<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6709;&#x7F13;&#x51B2;&#x7684;int&#x7684;&#x901A;&#x9053;</span>
-
-    <span class="hljs-keyword">go</span> <span class="hljs-keyword">func</span>(channel <span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>) {
-
-        time.Sleep(time.Second * <span class="hljs-number">5</span>)
-
-        channel1 &lt;- <span class="hljs-number">10</span>
-    }(channel1)
-
-    res := &lt;- channel1
-
-    fmt.Println(res)
-}
-</code></pre>
-<h3 id="-notice"><font color="#00ffff">  </font><font color="red">Notice</font></h3>
-<ul>
-<li>&#x7BA1;&#x9053;&#x7684;&#x5199;&#x5165;&#x548C;&#x8BFB;&#x53D6;&#x53EF;&#x4EE5;&#x5206;&#x5E03;&#x5728;&#x4E0D;&#x540C;&#x7684;gorountine&#x4E2D;</li>
-<li>&#x5728;&#x8BFB;&#x53D6;&#x963B;&#x585E;&#x671F;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5411;&#x8BE5;&#x534F;&#x7A0B;&#x5199;&#x5165;&#x4E86;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x963B;&#x585E;&#x5C31;&#x80FD;&#x6B63;&#x5E38;&#x6267;&#x884C;&#x3002;</li>
-<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x8BFB;&#x53D6;&#x7BA1;&#x9053;&#x4E2D;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x963B;&#x585E;&#x4E86;&#xFF0C;&#x4E4B;&#x540E;&#x8FD9;&#x4E2A;&#x7BA1;&#x9053;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x5199;&#x5165;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E00;&#x76F4;&#x963B;&#x585E;&#xFF0C;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x88AB;&#x89E3;&#x5C01;&#x3002;</li>
-</ul>
-<h2 id="&#x4E09;&#x3001;&#x5173;&#x4E8E;&#x901A;&#x9053;&#x7684;panic">&#x4E09;&#x3001;&#x5173;&#x4E8E;&#x901A;&#x9053;&#x7684;panic</h2>
-<h4 id="1&#x3001;&#x5982;&#x679C;&#x5173;&#x95ED;&#x4E86;&#x7BA1;&#x9053;&#xFF0C;&#x518D;&#x5411;&#x7BA1;&#x9053;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#x4F1A;&#x5F15;&#x53D1;panic&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x548C;&#x6709;&#x65E0;&#x7F13;&#x51B2;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x3002;">1&#x3001;&#x5982;&#x679C;&#x5173;&#x95ED;&#x4E86;&#x7BA1;&#x9053;&#xFF0C;&#x518D;&#x5411;&#x7BA1;&#x9053;&#x91CC;&#x9762;&#x5199;&#x6570;&#x636E;&#x4F1A;&#x5F15;&#x53D1;panic&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x548C;&#x6709;&#x65E0;&#x7F13;&#x51B2;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x7684;&#x3002;</h4>
-<h4 id="2&#x3001;&#x5982;&#x679C;&#x8981;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;channel&#xFF0C;&#x4E5F;&#x4F1A;&#x5F15;&#x8D77;panic&#xFF0C;&#x5173;&#x95ED;&#x7A7A;&#x7684;&#x4E1C;&#x897F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x7ED3;&#x679C;&#x3002;">2&#x3001;&#x5982;&#x679C;&#x8981;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x7684;channel&#xFF0C;&#x4E5F;&#x4F1A;&#x5F15;&#x8D77;panic&#xFF0C;&#x5173;&#x95ED;&#x7A7A;&#x7684;&#x4E1C;&#x897F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x7ED3;&#x679C;&#x3002;</h4>
-<h2 id="&#x56DB;&#x3001;&#x6C38;&#x4E45;&#x963B;&#x585E;">&#x56DB;&#x3001;&#x6C38;&#x4E45;&#x963B;&#x585E;</h2>
-<h4 id="1&#x3001;-&#x5982;&#x679C;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;channel&#xFF0C;&#x6CA1;&#x6709;make&#x3002;&#x8FD9;&#x4E2A;channel&#x5C31;&#x662F;nil&#x7684;">1&#x3001; &#x5982;&#x679C;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;channel&#xFF0C;&#x6CA1;&#x6709;make&#x3002;&#x8FD9;&#x4E2A;channel&#x5C31;&#x662F;nil&#x7684;</h4>
-<h4 id=""> </h4>
-<h2 id="&#x4E94;&#x3001;&#x603B;&#x7ED3;">&#x4E94;&#x3001;&#x603B;&#x7ED3;</h2>
-<p>&#x7BA1;&#x9053;&#x7684;&#x5173;&#x95ED;&#x8981;&#x5728;&#x53D1;&#x9001;&#x8005;&#x624B;&#x91CC;&#x63A7;&#x5236;&#xFF0C;&#x8981;&#x4E0D;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x8005;&#x63A5;&#x53D7;&#x5B8C;&#x4E86;&#x5C31;&#x5173;&#x95ED;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5C31;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x4E86;&#x3002;</p>
 
                                 
                                 </section>
@@ -478,12 +440,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Go 的崛起">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page:  计算机操作系统 ">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="参数传值和传引用.html" class="navigation navigation-next " aria-label="Next page: go传参类型">
+                <a href="../../编程语言/" class="navigation navigation-next " aria-label="Next page: 编程语言">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -494,7 +456,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"管道的使用","level":"1.3.1.1","depth":3,"next":{"title":"go传参类型","level":"1.3.1.2","depth":3,"path":"编程语言/go/参数传值和传引用.md","ref":"编程语言/go/参数传值和传引用.md","articles":[]},"previous":{"title":"Go 的崛起","level":"1.3.1","depth":2,"path":"编程语言/go/README.md","ref":"编程语言/go/README.md","articles":[{"title":"管道的使用","level":"1.3.1.1","depth":3,"path":"编程语言/go/管道的使用.md","ref":"编程语言/go/管道的使用.md","articles":[]},{"title":"go传参类型","level":"1.3.1.2","depth":3,"path":"编程语言/go/参数传值和传引用.md","ref":"编程语言/go/参数传值和传引用.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","livereload"],"styles":{"website":"assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Levy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Levy","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"猛禽不是鸟":"http://localhost:4000/"}},"gitbook":"*","description":"This is record sharing by Levy.","extension":null},"file":{"path":"编程语言/go/管道的使用.md","mtime":"2021-05-25T15:35:14.982Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T02:14:12.424Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"深拷贝和浅拷贝","level":"1.2.2.1","depth":3,"next":{"title":"编程语言","level":"1.3","depth":1,"path":"编程语言/README.md","ref":"编程语言/README.md","articles":[{"title":"Go 的崛起","level":"1.3.1","depth":2,"path":"编程语言/go/README.md","ref":"编程语言/go/README.md","articles":[{"title":"管道的使用","level":"1.3.1.1","depth":3,"path":"编程语言/go/管道的使用.md","ref":"编程语言/go/管道的使用.md","articles":[]},{"title":"go传参类型","level":"1.3.1.2","depth":3,"path":"编程语言/go/参数传值和传引用.md","ref":"编程语言/go/参数传值和传引用.md","articles":[]}]},{"title":"PHP的从一而终","level":"1.3.2","depth":2,"path":"编程语言/php/README.md","ref":"编程语言/php/README.md","articles":[]}]},"previous":{"title":" 计算机操作系统 ","level":"1.2.2","depth":2,"path":"计算机基础/计算机操作系统/README.md","ref":"计算机基础/计算机操作系统/README.md","articles":[{"title":"深拷贝和浅拷贝","level":"1.2.2.1","depth":3,"path":"计算机基础/计算机操作系统/深拷贝和浅拷贝.md","ref":"计算机基础/计算机操作系统/深拷贝和浅拷贝.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","livereload"],"styles":{"website":"assets/styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Levy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Levy","language":"zh-hans","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"猛禽不是鸟":"http://localhost:4000/"}},"gitbook":"*","description":"This is record sharing by Levy.","extension":null},"file":{"path":"计算机基础/计算机操作系统/深拷贝和浅拷贝.md","mtime":"2021-05-26T02:12:13.677Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T02:14:12.424Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
