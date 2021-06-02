@@ -12,3 +12,12 @@
 
 
 
+
+
+## 参考文献
+
+- [1][DMA概述](https://nieyong.github.io/wiki_cpu/CPU%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84-DMA.html)
+- [2][IO会一直占用CPU吗](https://www.zhihu.com/question/27734728)
+
+
+
